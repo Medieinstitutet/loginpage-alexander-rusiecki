@@ -21,6 +21,6 @@ export const checkUserCredentials = (name, password) => {
     foundUser = registeredUsers.find(user => user.name === name);
     renderStartPage(foundUser);
   } else {
-    renderErrorMessage();
+    renderErrorMessage('Please enter a valid name and password');
   }
 };
