@@ -1,39 +1,31 @@
-export const renderForm = type => {
+export const renderForm = (
+  nameId,
+  namePlaceholder,
+  passwordId,
+  passwordPlaceholder,
+  buttonText
+) => {
   const rootDiv = document.getElementById('root');
   const header = document.createElement('header');
   const main = document.createElement('main');
-  if (type === 'login') {
-    const loginForm = document.createElement('form');
-    const userNameInput = document.createElement('input');
-    userNameInput.id = 'userName';
-    userNameInput.placeholder = 'enter username';
-    const userPasswordInput = document.createElement('input');
-    userPasswordInput.id = 'userPassword';
-    userPasswordInput.placeholder = 'enter password';
-    userPasswordInput.type = 'password';
-    const loginButton = document.createElement('button');
-    loginButton.innerText = 'login';
-    loginForm.append(userNameInput, userPasswordInput, loginButton);
-    header.appendChild(loginForm);
-    rootDiv.append(header);
-    return loginForm;
+  const form = document.createElement('form');
+  form.setAttribute('class', buttonText);
+  const nameInput = document.createElement('input');
+  nameInput.id = nameId;
+  nameInput.placeholder = namePlaceholder;
+  const passwordInput = document.createElement('input');
+  passwordInput.id = passwordId;
+  passwordInput.placeholder = passwordPlaceholder;
+  const submitButton = document.createElement('button');
+  submitButton.innerText = buttonText;
+  form.append(nameInput, passwordInput, submitButton);
+  let formClass = form.getAttribute('class');
+  if (formClass === 'login') {
+    header.appendChild(form);
+    rootDiv.appendChild(header);
   } else {
-    const registerNewUserForm = document.createElement('form');
-    const newUserNameInput = document.createElement('input');
-    newUserNameInput.id = 'newUserName';
-    newUserNameInput.placeholder = 'choose username';
-    const newUserPasswordInput = document.createElement('input');
-    newUserPasswordInput.id = 'newUserPassword';
-    newUserPasswordInput.placeholder = 'choose password';
-    const registerNewUserButton = document.createElement('button');
-    registerNewUserButton.innerText = 'register';
-    registerNewUserForm.append(
-      newUserNameInput,
-      newUserPasswordInput,
-      registerNewUserButton
-    );
-    main.appendChild(registerNewUserForm);
-    rootDiv.append(main);
-    return registerNewUserForm;
+    main.appendChild(form);
+    rootDiv.appendChild(main);
   }
+  return form;
 };

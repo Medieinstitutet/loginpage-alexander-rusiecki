@@ -5,8 +5,20 @@ import { checkUserCredentials } from './controllers/checkUserCredentials.js';
 import { checkUsernameAvailability } from './controllers/checkUsernameAvailability.js';
 import { clearInputField } from './utils/clearInputField.js';
 
-const loginForm = renderForm('login');
-const registerNewUserForm = renderForm('register');
+const loginForm = renderForm(
+  'userName',
+  'enter username',
+  'userPassword',
+  'enter password',
+  'login'
+);
+const registerNewUserForm = renderForm(
+  'newUserName',
+  'choose username',
+  'newUserPassword',
+  'choose password',
+  'register'
+);
 renderFooter();
 
 fetchLocalStorage('registeredUsers');
