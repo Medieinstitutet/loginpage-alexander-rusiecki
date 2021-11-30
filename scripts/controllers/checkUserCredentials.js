@@ -6,7 +6,7 @@ import { renderErrorMessage } from '../controllers/renderErrorMessage.js';
 export const checkUserCredentials = (name, password) => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   let foundUser = registeredUsers.find(user => user.name === name);
-  if (foundUser.password === password) {
+  if (foundUser && foundUser.password === password) {
     let loggedInUser = { ...foundUser, isLoggedIn: true };
     let updatedArray = registeredUsers.map(user => {
       if (user.name === name) {
