@@ -1,4 +1,5 @@
 import { fetchLocalStorage } from './model/fetchLocalStorage.js';
+import { checkUserCredentials } from './controllers/checkUserCredentials.js';
 import { registerNewUser } from './controllers/registerNewUser.js';
 import { clearInputField } from './utils/clearInputField.js';
 
@@ -47,21 +48,25 @@ loginForm.addEventListener('submit', e => {
   e.preventDefault();
   const name = loginForm.userName.value;
   const password = loginForm.userPassword.value;
-  console.log(name, password);
-  clearInputField('userName');
-  clearInputField('userPassword');
+  if (name && password) {
+    checkUserCredentials(name, password);
+    clearInputField('userName');
+    clearInputField('userPassword');
+  }
 });
 
 registerNewUserForm.addEventListener('submit', e => {
   e.preventDefault();
   const name = registerNewUserForm.newUserName.value;
   const password = registerNewUserForm.newUserPassword.value;
-  const newUser = {
-    name,
-    password,
-    isLoggedIn: false,
-  };
-  registerNewUser(newUser);
-  clearInputField('newUserName');
-  clearInputField('newUserPassword');
+  if (name && password) {
+    const newUser = {
+      name,
+      password,
+      isLoggedIn: false,
+    };
+    registerNewUser(newUser);
+    clearInputField('newUserName');
+    clearInputField('newUserPassword');
+  }
 });

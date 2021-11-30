@@ -5,4 +5,5 @@ export const registerNewUser = newUser => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   registeredUsers.push(newUser);
   updateLocalStorage('registeredUsers', registeredUsers);
+  // const foundUser = registeredUsers.some(user => user.name === name);
 };
