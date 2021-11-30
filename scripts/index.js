@@ -1,6 +1,6 @@
 import { fetchLocalStorage } from './model/fetchLocalStorage.js';
 import { checkUserCredentials } from './controllers/checkUserCredentials.js';
-import { registerNewUser } from './controllers/registerNewUser.js';
+import { checkUsernameAvailability } from './controllers/checkUsernameAvailability.js';
 import { clearInputField } from './utils/clearInputField.js';
 
 const rootDiv = document.getElementById('root');
@@ -60,12 +60,7 @@ registerNewUserForm.addEventListener('submit', e => {
   const name = registerNewUserForm.newUserName.value;
   const password = registerNewUserForm.newUserPassword.value;
   if (name && password) {
-    const newUser = {
-      name,
-      password,
-      isLoggedIn: false,
-    };
-    registerNewUser(newUser);
+    checkUsernameAvailability(name, password);
     clearInputField('newUserName');
     clearInputField('newUserPassword');
   }
