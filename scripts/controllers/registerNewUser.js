@@ -5,5 +5,4 @@ export const registerNewUser = newUser => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   registeredUsers.push(newUser);
   updateLocalStorage('registeredUsers', registeredUsers);
-  registeredUsers = fetchLocalStorage('registeredUsers');
 };
