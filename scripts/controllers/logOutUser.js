@@ -45,8 +45,8 @@ export const logOutUser = user => {
     const password = loginForm.userPassword.value;
     if (name && password) {
       checkUserCredentials(name, password);
-      clearInputField('userName');
-      clearInputField('userPassword');
+      // clearInputField('userName');
+      // clearInputField('userPassword');
     }
   });
 
@@ -56,8 +56,8 @@ export const logOutUser = user => {
     const password = registerNewUserForm.newUserPassword.value;
     if (name && password) {
       checkUsernameAvailability(name, password);
-      clearInputField('newUserName');
-      clearInputField('newUserPassword');
+      // clearInputField('newUserName');
+      // clearInputField('newUserPassword');
     }
   });
 };
