@@ -1,6 +1,6 @@
-export const renderErrorMessage = errorMessage => {
-  const rootDiv = document.getElementById('root');
+export const renderErrorMessage = (errorMessage, appendTo) => {
+  const element = document.getElementsByTagName(appendTo);
   const errorParagraph = document.createElement('p');
   errorParagraph.textContent = errorMessage;
-  rootDiv.appendChild(errorParagraph);
+  element[0].append(errorParagraph);
 };
