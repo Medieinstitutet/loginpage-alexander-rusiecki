@@ -8,12 +8,12 @@ export const checkUserCredentials = (name, password) => {
   let foundUser = registeredUsers.find(user => user.name === name);
   if (foundUser && foundUser.password === password) {
     let loggedInUser = { ...foundUser, isLoggedIn: true };
-    let updatedArray = registeredUsers.map(user => {
-      if (user.name === name) {
-        user = loggedInUser;
-        return user;
+    let updatedArray = registeredUsers.map(registeredUser => {
+      if (registeredUser.name === name) {
+        registeredUser = loggedInUser;
+        return registeredUser;
       } else {
-        return user;
+        return registeredUser;
       }
     });
     updateLocalStorage('registeredUsers', updatedArray);

@@ -20,7 +20,6 @@ const registerNewUserForm = renderForm(
   'register'
 );
 renderFooter();
-
 fetchLocalStorage('registeredUsers');
 
 loginForm.addEventListener('submit', e => {
@@ -29,8 +28,8 @@ loginForm.addEventListener('submit', e => {
   const password = loginForm.userPassword.value;
   if (name && password) {
     checkUserCredentials(name, password);
-    clearInputField('userName');
-    clearInputField('userPassword');
+    // clearInputField('userName');
+    // clearInputField('userPassword');
   }
 });
 

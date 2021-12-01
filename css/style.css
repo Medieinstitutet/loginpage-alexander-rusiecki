@@ -6,4 +6,54 @@
 
 body {
   font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  height: 20%;
+  background-color: rgb(204, 204, 233);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1em;
+}
+
+.login {
+  height: 40%;
+}
+
+#userName,
+#userPassword {
+  height: 50%;
+}
+
+button {
+  width: 10em;
+  padding: 0.5em 2em;
+  cursor: pointer;
+}
+
+main {
+  height: 60%;
+  background-color: rgb(216, 168, 168);
+  display: grid;
+  place-content: center;
+}
+
+footer {
+  height: 20%;
+  background-color: rgb(127, 209, 127);
+}
+
+img {
+  height: 4em;
+  width: auto;
+  border: 1px solid black;
+  border-radius: 50%;
 }
