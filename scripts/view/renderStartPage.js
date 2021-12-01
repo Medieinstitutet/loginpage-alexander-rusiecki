@@ -1,4 +1,7 @@
-export const renderStartPage = ({ name, isLoggedIn, imgUrl }) => {
+import { logOutUser } from '../controllers/logOutUser.js';
+
+export const renderStartPage = foundUser => {
+  const { name, isLoggedIn, imgUrl } = foundUser;
   if (isLoggedIn) {
     const header = document.querySelector('header');
     const main = document.querySelector('main');
@@ -10,6 +13,9 @@ export const renderStartPage = ({ name, isLoggedIn, imgUrl }) => {
     const nameHeading = document.createElement('h1');
     nameHeading.textContent = `Welcome ${name}`;
     avatar.src = imgUrl;
+    logOutButton.addEventListener('click', () => {
+      logOutUser(foundUser);
+    });
     header.append(avatar, logOutButton);
     main.append(nameHeading);
   }

@@ -28,9 +28,20 @@ header {
   height: 40%;
 }
 
+.register {
+  height: 100%;
+}
+
 #userName,
-#userPassword {
+#userPassword,
+#newUserName,
+#newUserPassword {
   height: 50%;
+}
+
+#newUserName,
+#newUserPassword {
+  height: 100%;
 }
 
 button {
