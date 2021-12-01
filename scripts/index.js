@@ -1,6 +1,7 @@
 import { renderForm } from './view/renderForm.js';
 import { renderFooter } from './view/renderFooter.js';
 import { fetchLocalStorage } from './model/fetchLocalStorage.js';
+import { displayLoggedInUser } from './view/displayLoggedInUser.js';
 import { checkUserCredentials } from './controllers/checkUserCredentials.js';
 import { checkUsernameAvailability } from './controllers/checkUsernameAvailability.js';
 import { clearInputField } from './utils/clearInputField.js';
@@ -20,7 +21,10 @@ const registerNewUserForm = renderForm(
   'register'
 );
 renderFooter();
-fetchLocalStorage('registeredUsers');
+
+const registeredUsers = fetchLocalStorage('registeredUsers');
+
+displayLoggedInUser(registeredUsers);
 
 loginForm.addEventListener('submit', e => {
   e.preventDefault();
