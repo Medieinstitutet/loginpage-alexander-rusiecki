@@ -10,8 +10,7 @@ export const checkUserCredentials = (name, password) => {
     let loggedInUser = { ...foundUser, isLoggedIn: true };
     let updatedArray = registeredUsers.map(registeredUser => {
       if (registeredUser.name === name) {
-        registeredUser = loggedInUser;
-        return registeredUser;
+        return loggedInUser;
       } else {
         return registeredUser;
       }

@@ -1,3 +1,5 @@
+import { getPageSections } from '../utils/getPageSections.js';
+
 export const renderForm = (
   nameId,
   namePlaceholder,
@@ -5,9 +7,7 @@ export const renderForm = (
   passwordPlaceholder,
   buttonText
 ) => {
-  const rootDiv = document.getElementById('root');
-  const header = document.createElement('header');
-  const main = document.createElement('main');
+  const { rootDiv, header, main, footer } = getPageSections();
 
   const form = document.createElement('form');
   form.setAttribute('class', buttonText);
@@ -32,6 +32,7 @@ export const renderForm = (
   } else {
     main.appendChild(form);
     rootDiv.appendChild(main);
+    rootDiv.insertAdjacentElement('beforeend', footer);
   }
-  return form;
+  return { form, header, main };
 };

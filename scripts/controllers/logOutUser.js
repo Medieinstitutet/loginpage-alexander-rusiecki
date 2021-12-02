@@ -6,9 +6,8 @@ export const logOutUser = user => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   let loggedOutUser = { ...user, isLoggedIn: false };
   let updatedArray = registeredUsers.map(registeredUser => {
-    if (registeredUser.isLoggedIn === true) {
-      registeredUser = loggedOutUser;
-      return registeredUser;
+    if (registeredUser.isLoggedIn) {
+      return loggedOutUser;
     } else {
       return registeredUser;
     }
