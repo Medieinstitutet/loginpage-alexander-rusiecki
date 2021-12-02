@@ -8,6 +8,7 @@ body {
   font-family: sans-serif;
   height: 100vh;
   width: 100vw;
+  background-color: #333333;
 }
 
 #root {
@@ -17,11 +18,11 @@ body {
 
 header {
   height: 20%;
-  background-color: rgb(204, 204, 233);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 1em;
+  background-color: #4d4c4c;
 }
 
 .login {
@@ -45,21 +46,37 @@ header {
 }
 
 button {
-  width: 10em;
-  padding: 0.5em 2em;
+  background-color: #333333;
+  border: 2px solid white;
+  border-radius: 27px;
+  color: white;
   cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+
+button:hover,
+button:focus {
+  background-color: white;
+  color: #333333;
+  outline: 0;
 }
 
 main {
   height: 60%;
-  background-color: rgb(216, 168, 168);
   display: grid;
   place-content: center;
+}
+main form {
+  text-align: center;
 }
 
 footer {
   height: 20%;
-  background-color: rgb(127, 209, 127);
+  background-color: #1d1d1d;
 }
 
 img {
