@@ -1,7 +1,7 @@
 import { getPageSections } from '../utils/getPageSections.js';
 import { logOutUser } from '../controllers/logOutUser.js';
 
-export const renderStartPage = loggedInUser => {
+export const renderLoggedInPage = loggedInUser => {
   const { name, isLoggedIn, imgUrl } = loggedInUser;
   const { rootDiv, header, main, footer } = getPageSections();
 
