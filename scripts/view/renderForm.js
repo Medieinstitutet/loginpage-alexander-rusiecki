@@ -9,6 +9,9 @@ export const renderForm = (
 ) => {
   const { rootDiv, header, main, footer } = getPageSections();
 
+  const logo = document.createElement('img');
+  logo.src = '../img/logo.jpg';
+
   const form = document.createElement('form');
   form.setAttribute('class', buttonText);
 
@@ -27,7 +30,7 @@ export const renderForm = (
 
   const formClass = form.getAttribute('class');
   if (formClass === 'login') {
-    header.appendChild(form);
+    header.append(logo, form);
     rootDiv.appendChild(header);
   } else {
     main.appendChild(form);
