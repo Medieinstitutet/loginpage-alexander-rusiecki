@@ -1,6 +1,6 @@
 import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
-import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 import { updateAndFetchLocalStorage } from '../model/updateAndFetchLocalStorage.js';
+import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 
 export const registerNewUser = newUser => {
   let registeredUsers = fetchLocalStorage('registeredUsers');

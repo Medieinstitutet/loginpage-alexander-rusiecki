@@ -22,6 +22,7 @@ export const checkIfUserLoggedIn = registeredUsers => {
       'choose password',
       'register'
     );
+
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
       const name = loginForm.userName.value;
@@ -30,6 +31,7 @@ export const checkIfUserLoggedIn = registeredUsers => {
         checkUserCredentials(name, password);
       }
     });
+
     registerNewUserForm.addEventListener('submit', e => {
       e.preventDefault();
       const name = registerNewUserForm.newUserName.value;

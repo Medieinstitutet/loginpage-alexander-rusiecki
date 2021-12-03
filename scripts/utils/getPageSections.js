@@ -3,7 +3,7 @@ export const getPageSections = () => {
   const header = document.createElement('header');
   const main = document.createElement('main');
   const footerHeading = document.createElement('h3');
-  footerHeading.textContent = 'Alexander Rusiecki';
+  footerHeading.textContent = 'Login - Logout - Register';
   const footer = document.createElement('footer');
   footer.appendChild(footerHeading);
   return { rootDiv, header, main, footer };

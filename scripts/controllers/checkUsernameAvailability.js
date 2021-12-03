@@ -1,6 +1,6 @@
 import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
-import { registerNewUser } from '../controllers/registerNewUser.js';
 import { renderErrorMessage } from '../controllers/renderErrorMessage.js';
+import { registerNewUser } from '../controllers/registerNewUser.js';
 
 export const checkUsernameAvailability = (name, password) => {
   let registeredUsers = fetchLocalStorage('registeredUsers');

@@ -13,12 +13,12 @@ export const renderLoggedInPage = loggedInUser => {
     logOutButton.innerText = 'logout';
 
     const nameHeading = document.createElement('h1');
-    nameHeading.textContent = `Log out immediately ${name}, nobody wants you here!`;
+    nameHeading.textContent = `What´s up ${name}?!`;
 
     rootDiv.innerHTML = '';
 
     header.append(avatar, logOutButton);
-    main.append(nameHeading);
+    main.appendChild(nameHeading);
     rootDiv.append(header, main, footer);
     logOutButton.addEventListener('click', () => {
       rootDiv.innerHTML = '';
