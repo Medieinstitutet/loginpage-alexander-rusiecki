@@ -10,8 +10,8 @@ Updates registered users array, updates and fetches new state from local storage
 */
 export const logOutUser = user => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
-  let loggedOutUser = { ...user, isLoggedIn: false };
-  let updatedArray = registeredUsers.map(registeredUser =>
+  const loggedOutUser = { ...user, isLoggedIn: false };
+  const updatedArray = registeredUsers.map(registeredUser =>
     registeredUser.isLoggedIn ? loggedOutUser : registeredUser
   );
   registeredUsers = updateAndFetchLocalStorage('registeredUsers', updatedArray);

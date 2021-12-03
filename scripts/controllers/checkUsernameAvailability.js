@@ -7,8 +7,8 @@ Check if submitted username is available.
 If avalable, creates new user object.
 */
 export const checkUsernameAvailability = (name, password) => {
-  let registeredUsers = fetchLocalStorage('registeredUsers');
-  let nameNotAvailable = registeredUsers.some(registeredUser =>
+  const registeredUsers = fetchLocalStorage('registeredUsers');
+  const nameNotAvailable = registeredUsers.some(registeredUser =>
     Object.values(registeredUser).includes(name)
   );
   if (nameNotAvailable) {
