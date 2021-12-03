@@ -1,10 +1,7 @@
-import { getPageSections } from '../utils/getPageSections.js';
 import { logOutUser } from '../controllers/logOutUser.js';
-
+import { rootDiv, header, main, footer } from '../index.js';
 export const renderLoggedInPage = loggedInUser => {
   const { name, isLoggedIn, imgUrl } = loggedInUser;
-  const { rootDiv, header, main, footer } = getPageSections();
-
   if (isLoggedIn) {
     const avatar = document.createElement('img');
     avatar.src = imgUrl;
@@ -15,13 +12,15 @@ export const renderLoggedInPage = loggedInUser => {
     const nameHeading = document.createElement('h1');
     nameHeading.textContent = `What´s up ${name} 😜`;
 
-    rootDiv.innerHTML = '';
+    header.innerHTML = '';
+    main.innerHTML = '';
 
     header.append(avatar, logOutButton);
     main.appendChild(nameHeading);
     rootDiv.append(header, main, footer);
     logOutButton.addEventListener('click', () => {
-      rootDiv.innerHTML = '';
+      header.innerHTML = '';
+      main.innerHTML = '';
       logOutUser(loggedInUser);
     });
   }

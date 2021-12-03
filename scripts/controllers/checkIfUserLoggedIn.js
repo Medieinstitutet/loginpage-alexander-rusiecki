@@ -2,20 +2,19 @@ import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 import { renderForm } from '../view/renderForm.js';
 import { checkUserCredentials } from './checkUserCredentials.js';
 import { checkUsernameAvailability } from './checkUsernameAvailability.js';
-
 export const checkIfUserLoggedIn = registeredUsers => {
   const loggedInUser = registeredUsers.find(user => user.isLoggedIn);
   if (loggedInUser) {
     renderLoggedInPage(loggedInUser);
   } else {
-    const { form: loginForm } = renderForm(
+    const loginForm = renderForm(
       'userName',
       'enter username',
       'userPassword',
       'enter password',
       'login'
     );
-    const { form: registerNewUserForm } = renderForm(
+    const registerNewUserForm = renderForm(
       'newUserName',
       'choose username',
       'newUserPassword',

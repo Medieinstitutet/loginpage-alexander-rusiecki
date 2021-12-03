@@ -1,4 +1,4 @@
-import { getPageSections } from '../utils/getPageSections.js';
+import { rootDiv, header, main, footer } from '../index.js';
 
 export const renderForm = (
   nameId,
@@ -7,8 +7,6 @@ export const renderForm = (
   passwordPlaceholder,
   buttonText
 ) => {
-  const { rootDiv, header, main, footer } = getPageSections();
-
   const logo = document.createElement('img');
   logo.src = '../img/logo.jpg';
 
@@ -37,5 +35,5 @@ export const renderForm = (
     rootDiv.appendChild(main);
     rootDiv.insertAdjacentElement('beforeend', footer);
   }
-  return { form, header, main };
+  return form;
 };
