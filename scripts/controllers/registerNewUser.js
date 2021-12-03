@@ -4,20 +4,10 @@ import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 
 export const registerNewUser = newUser => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
-  let loggedInUser = registeredUsers.find(
-    registeredUser => registeredUser.isLoggedIn
-  );
-  let updatedArray = registeredUsers.map(registredUser => {
-    if (registredUser.isLoggedIn) {
-      return { ...registredUser, isLoggedIn: false };
-    } else {
-      return registredUser;
-    }
-  });
-  updatedArray.push(newUser);
-  updateLocalStorage('registeredUsers', updatedArray);
+  registeredUsers = [...registeredUsers, newUser];
+  updateLocalStorage('registeredUsers', registeredUsers);
   registeredUsers = fetchLocalStorage('registeredUsers');
-  loggedInUser = registeredUsers.find(
+  const loggedInUser = registeredUsers.find(
     registeredUser => registeredUser.isLoggedIn
   );
   renderLoggedInPage(loggedInUser);
