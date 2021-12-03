@@ -72,7 +72,7 @@ img {
 }
 
 header p {
-  color: red;
+  color: rgb(243, 49, 49);
   position: absolute;
 }
 
@@ -86,7 +86,7 @@ main {
   position: relative;
 }
 main p {
-  color: red;
+  color: rgb(243, 49, 49);
   position: absolute;
   bottom: -20%;
 }
