@@ -1,5 +1,5 @@
 import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
-import { updateLocalStorage } from '../model/updateLocalStorage.js';
+import { updateAndFetchLocalStorage } from '../model/updateAndFetchLocalStorage.js';
 import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 import { renderErrorMessage } from '../controllers/renderErrorMessage.js';
 
@@ -12,8 +12,10 @@ export const checkUserCredentials = (name, password) => {
     let updatedArray = registeredUsers.map(registeredUser =>
       registeredUser.name === name ? loggedInUser : registeredUser
     );
-    updateLocalStorage('registeredUsers', updatedArray);
-    registeredUsers = fetchLocalStorage('registeredUsers');
+    registeredUsers = updateAndFetchLocalStorage(
+      'registeredUsers',
+      updatedArray
+    );
     foundUser = registeredUsers.find(user => user.name === name);
     renderLoggedInPage(foundUser);
   } else {

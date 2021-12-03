@@ -1,6 +1,6 @@
 import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
-import { updateLocalStorage } from '../model/updateLocalStorage.js';
 import { checkIfUserLoggedIn } from '../controllers/checkIfUserLoggedIn.js';
+import { updateAndFetchLocalStorage } from '../model/updateAndFetchLocalStorage.js';
 
 export const logOutUser = user => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
@@ -12,7 +12,6 @@ export const logOutUser = user => {
       return registeredUser;
     }
   });
-  updateLocalStorage('registeredUsers', updatedArray);
-  registeredUsers = fetchLocalStorage('registeredUsers');
+  registeredUsers = updateAndFetchLocalStorage('registeredUsers', updatedArray);
   checkIfUserLoggedIn(registeredUsers);
 };
