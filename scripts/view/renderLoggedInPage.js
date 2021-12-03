@@ -13,7 +13,7 @@ export const renderLoggedInPage = loggedInUser => {
     logOutButton.innerText = 'logout';
 
     const nameHeading = document.createElement('h1');
-    nameHeading.textContent = `Welcome ${name}!`;
+    nameHeading.textContent = `Log out immediately ${name}, nobody wants you here!`;
 
     rootDiv.innerHTML = '';
 
