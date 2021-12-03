@@ -19,7 +19,7 @@ export const checkUserCredentials = (name, password) => {
     foundUser = registeredUsers.find(user => user.name === name);
     renderLoggedInPage(foundUser);
   } else {
-    renderErrorMessage('Please enter a valid name and password', 'header');
+    renderErrorMessage('Please enter a valid name and password', '.login');
     form.reset();
   }
 };

@@ -17,7 +17,7 @@ body {
 }
 
 header {
-  position: relative;
+  /* position: relative; */
   height: 15%;
   padding: 0 1em;
   display: flex;
@@ -75,12 +75,9 @@ img {
 header p {
   color: red;
   position: absolute;
-  right: 10em;
-  bottom: 0.5em;
 }
 
 main {
-  position: relative;
   height: 70%;
   display: grid;
   place-content: center;
@@ -92,9 +89,7 @@ main {
 main p {
   color: red;
   position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: -20%;
 }
 
 .register {

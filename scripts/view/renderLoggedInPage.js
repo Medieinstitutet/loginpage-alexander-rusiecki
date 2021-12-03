@@ -1,7 +1,9 @@
 import { logOutUser } from '../controllers/logOutUser.js';
 import { rootDiv, header, main, footer } from '../index.js';
+
 export const renderLoggedInPage = loggedInUser => {
   const { name, isLoggedIn, imgUrl } = loggedInUser;
+
   if (isLoggedIn) {
     const avatar = document.createElement('img');
     avatar.src = imgUrl;
@@ -18,6 +20,7 @@ export const renderLoggedInPage = loggedInUser => {
     header.append(avatar, logOutButton);
     main.appendChild(nameHeading);
     rootDiv.append(header, main, footer);
+
     logOutButton.addEventListener('click', () => {
       header.innerHTML = '';
       main.innerHTML = '';

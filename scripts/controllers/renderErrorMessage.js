@@ -1,6 +1,6 @@
-export const renderErrorMessage = (errorMessage, appendTo) => {
-  const element = document.getElementsByTagName(appendTo);
+export const renderErrorMessage = (errorMessage, className) => {
+  const parentElement = document.querySelector(className);
   const errorParagraph = document.createElement('p');
   errorParagraph.textContent = errorMessage;
-  element[0].append(errorParagraph);
+  parentElement.appendChild(errorParagraph);
 };

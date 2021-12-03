@@ -8,10 +8,7 @@ export const checkUsernameAvailability = (name, password) => {
     Object.values(registeredUser).includes(name)
   );
   if (nameNotAvailable) {
-    renderErrorMessage(
-      'the username you have chosen is already in use',
-      'main'
-    );
+    renderErrorMessage('the username is already in use', '.register');
   } else {
     const newUser = {
       name,

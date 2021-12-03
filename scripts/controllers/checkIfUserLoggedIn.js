@@ -2,8 +2,10 @@ import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
 import { renderForm } from '../view/renderForm.js';
 import { checkUserCredentials } from './checkUserCredentials.js';
 import { checkUsernameAvailability } from './checkUsernameAvailability.js';
+
 export const checkIfUserLoggedIn = registeredUsers => {
   const loggedInUser = registeredUsers.find(user => user.isLoggedIn);
+
   if (loggedInUser) {
     renderLoggedInPage(loggedInUser);
   } else {
