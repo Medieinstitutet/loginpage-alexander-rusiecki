@@ -1,6 +1,7 @@
 import { logOutUser } from '../controllers/logOutUser.js';
 import { rootDiv, header, main, footer } from '../index.js';
 
+// Renders logged in page with argument user that is currently logged in.
 export const renderLoggedInPage = loggedInUser => {
   const { name, isLoggedIn, imgUrl } = loggedInUser;
 

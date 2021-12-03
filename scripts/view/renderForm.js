@@ -1,5 +1,6 @@
 import { rootDiv, header, main, footer } from '../index.js';
 
+// Function that creates and returns forms dynamically with given arguments.
 export const renderForm = (
   nameId,
   namePlaceholder,

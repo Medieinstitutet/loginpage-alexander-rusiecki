@@ -2,6 +2,10 @@ import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
 import { renderErrorMessage } from '../controllers/renderErrorMessage.js';
 import { registerNewUser } from '../controllers/registerNewUser.js';
 
+/*
+Check if submitted username is available.
+If avalable, creates new user object.
+*/
 export const checkUsernameAvailability = (name, password) => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   let nameNotAvailable = registeredUsers.some(registeredUser =>

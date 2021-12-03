@@ -1,3 +1,4 @@
+// Contains 2 user objects.
 export const registeredUsers = [
   {
     name: 'janne',

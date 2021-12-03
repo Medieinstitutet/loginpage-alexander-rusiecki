@@ -3,6 +3,12 @@ import { renderForm } from '../view/renderForm.js';
 import { checkUserCredentials } from './checkUserCredentials.js';
 import { checkUsernameAvailability } from './checkUsernameAvailability.js';
 
+/*
+Checks if user is is logged in from all registered users.
+If there is a logged in user, renders logged in page with logged in user as argument.
+If no users logged in, creates a login form and a register form.
+Adds submit event listeners to forms with input values.
+*/
 export const checkIfUserLoggedIn = registeredUsers => {
   const loggedInUser = registeredUsers.find(user => user.isLoggedIn);
 
