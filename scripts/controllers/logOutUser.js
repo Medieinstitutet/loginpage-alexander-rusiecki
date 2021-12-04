@@ -7,9 +7,12 @@ export const logOutUser = user => {
   // Sets user logged in status to false (spread operator).
   const loggedOutUser = { ...user, isLoggedIn: false };
   // Updates registered users with correct logged in statuses.
-  const updatedArray = registeredUsers.map(registeredUser =>
+  registeredUsers = registeredUsers.map(registeredUser =>
     registeredUser.isLoggedIn ? loggedOutUser : registeredUser
   );
-  registeredUsers = updateAndFetchLocalStorage('registeredUsers', updatedArray);
+  registeredUsers = updateAndFetchLocalStorage(
+    'registeredUsers',
+    registeredUsers
+  );
   checkIfUserLoggedIn(registeredUsers);
 };

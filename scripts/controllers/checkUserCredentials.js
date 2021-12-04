@@ -13,14 +13,14 @@ export const checkUserCredentials = (name, password) => {
     // Sets user logged in status to true (spread operator).
     const loggedInUser = { ...foundUser, isLoggedIn: true };
     // Updates registered users.
-    const updatedArray = registeredUsers.map(registeredUser =>
+    registeredUsers = registeredUsers.map(registeredUser =>
       registeredUser.name === name ? loggedInUser : registeredUser
     );
     registeredUsers = updateAndFetchLocalStorage(
       'registeredUsers',
-      updatedArray
+      registeredUsers
     );
-    // Finds the right user by name.
+    // Finds right user by name.
     foundUser = registeredUsers.find(user => user.name === name);
     renderLoggedInPage(foundUser);
   } else {
