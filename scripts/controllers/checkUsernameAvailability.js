@@ -17,7 +17,7 @@ export const checkUsernameAvailability = (name, password) => {
       name,
       password,
       isLoggedIn: true,
-      imgUrl: '../../img/donald_trump.jpg',
+      imgUrl: 'img/donald_trump.jpg',
     };
     registerNewUser(newUser);
   }
