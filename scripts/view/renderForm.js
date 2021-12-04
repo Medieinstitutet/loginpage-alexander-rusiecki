@@ -9,7 +9,7 @@ export const renderForm = (
   buttonText
 ) => {
   const logo = document.createElement('img');
-  logo.src = '/../img/logo.jpg';
+  logo.src = './img/logo.jpg';
 
   const form = document.createElement('form');
   form.setAttribute('class', buttonText);
