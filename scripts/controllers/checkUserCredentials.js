@@ -11,7 +11,7 @@ export const checkUserCredentials = (name, password) => {
   // If correct login credentials.
   if (foundUser && foundUser.password === password) {
     // Sets user logged in status to true (spread operator).
-    const loggedInUser = { ...foundUser, isLoggedIn: true };
+    let loggedInUser = { ...foundUser, isLoggedIn: true };
     // Updates registered users.
     registeredUsers = registeredUsers.map(registeredUser =>
       registeredUser.name === name ? loggedInUser : registeredUser
@@ -20,9 +20,9 @@ export const checkUserCredentials = (name, password) => {
       'registeredUsers',
       registeredUsers
     );
-    // Finds right user by name.
-    foundUser = registeredUsers.find(user => user.name === name);
-    renderLoggedInPage(foundUser);
+    // Finds right user by logged in status.
+    loggedInUser = registeredUsers.find(user => user.isLoggedIn);
+    renderLoggedInPage(loggedInUser);
   } else {
     renderErrorMessage('Please enter a valid name and password', '.login');
     form.reset();
