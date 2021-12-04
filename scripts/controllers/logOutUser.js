@@ -5,10 +5,10 @@ import { checkIfUserLoggedIn } from '../controllers/checkIfUserLoggedIn.js';
 export const logOutUser = user => {
   let registeredUsers = fetchLocalStorage('registeredUsers');
   // Sets user logged in status to false (spread operator).
-  const loggedOutUser = { ...user, isLoggedIn: false };
+  const isLoggedOut = { ...user, isLoggedIn: false };
   // Updates registered users with correct logged in statuses.
   registeredUsers = registeredUsers.map(registeredUser =>
-    registeredUser.isLoggedIn ? loggedOutUser : registeredUser
+    registeredUser.isLoggedIn ? isLoggedOut : registeredUser
   );
   registeredUsers = updateAndFetchLocalStorage(
     'registeredUsers',
