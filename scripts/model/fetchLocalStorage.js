@@ -1,9 +1,6 @@
 import { registeredUsers } from './registeredUsers.js';
 
-/* 
-Returns state from local storage at given argument key.
-If local storage is empty, adds 2 registered users.
-*/
+// Returns state from local storage. If local storage is empty, adds 2 registered users.
 export const fetchLocalStorage = key => {
   if (localStorage.getItem(key) === null) {
     localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));

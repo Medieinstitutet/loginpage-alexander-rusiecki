@@ -1,6 +1,6 @@
 import { rootDiv, header, main, footer } from '../index.js';
 
-// Function that creates and returns forms dynamically with given arguments.
+// Function that creates and returns forms dynamically when invoked.
 export const renderForm = (
   nameId,
   namePlaceholder,
@@ -29,9 +29,11 @@ export const renderForm = (
 
   const formClass = form.getAttribute('class');
   if (formClass === 'login') {
+    // Creates login form.
     header.append(logo, form);
     rootDiv.appendChild(header);
   } else {
+    // Creates register new user form.
     main.appendChild(form);
     rootDiv.appendChild(main);
     rootDiv.insertAdjacentElement('beforeend', footer);

@@ -3,18 +3,15 @@ import { renderForm } from '../view/renderForm.js';
 import { checkUserCredentials } from './checkUserCredentials.js';
 import { checkUsernameAvailability } from './checkUsernameAvailability.js';
 
-/*
-Checks if user is is logged in from all registered users.
-If there is a logged in user, renders logged in page with logged in user as argument.
-If no users logged in, creates a login form and a register form.
-Adds submit event listeners to forms with input values.
-*/
 export const checkIfUserLoggedIn = registeredUsers => {
+  // Finds logged in user.
   const loggedInUser = registeredUsers.find(user => user.isLoggedIn);
 
   if (loggedInUser) {
+    // If any logged in user is found.
     renderLoggedInPage(loggedInUser);
   } else {
+    // If no logged in user is found, creates login and register forms.
     const loginForm = renderForm(
       'userName',
       'enter username',
@@ -32,18 +29,24 @@ export const checkIfUserLoggedIn = registeredUsers => {
 
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
+      // Gets input values.
       const name = loginForm.userName.value;
       const password = loginForm.userPassword.value;
+      // If input fields are filled in.
       if (name && password) {
+        // Checks if correct username and password is submitted.
         checkUserCredentials(name, password);
       }
     });
 
     registerNewUserForm.addEventListener('submit', e => {
       e.preventDefault();
+      // Gets input values.
       const name = registerNewUserForm.newUserName.value;
       const password = registerNewUserForm.newUserPassword.value;
+      // If input fields are filled in.
       if (name && password) {
+        // Checks if chosen username is available.
         checkUsernameAvailability(name, password);
         registerNewUserForm.reset();
       }

@@ -1,4 +1,4 @@
-// Creates error message with error message argument and appends it to right element.
+// Creates specific error message and appends it to specified element.
 export const renderErrorMessage = (errorMessage, className) => {
   const parentElement = document.querySelector(className);
   const errorParagraph = document.createElement('p');

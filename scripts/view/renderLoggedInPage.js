@@ -1,10 +1,11 @@
 import { logOutUser } from '../controllers/logOutUser.js';
 import { rootDiv, header, main, footer } from '../index.js';
 
-// Renders logged in page with argument user that is currently logged in.
+// Renders logged in page with currently logged in user.
 export const renderLoggedInPage = loggedInUser => {
+  // Destructures logged in user object.
   const { name, isLoggedIn, imgUrl } = loggedInUser;
-
+  // If logged in user is found, creates DOM elements.
   if (isLoggedIn) {
     const avatar = document.createElement('img');
     avatar.src = imgUrl;
@@ -26,6 +27,7 @@ export const renderLoggedInPage = loggedInUser => {
     logOutButton.addEventListener('click', () => {
       header.innerHTML = '';
       main.innerHTML = '';
+      // Logs out currently logged in user.
       logOutUser(loggedInUser);
     });
   }
