@@ -30,8 +30,8 @@ export const renderForm = (
 
   form.append(nameInput, passwordInput, submitButton);
 
-  const formClass = form.getAttribute('class');
-  if (formClass === 'login') {
+  const formClassName = form.getAttribute('class');
+  if (formClassName === 'login') {
     // Creates login form.
     header.append(logo, form);
     rootDiv.appendChild(header);

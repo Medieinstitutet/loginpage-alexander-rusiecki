@@ -7,7 +7,7 @@ export const checkUserCredentials = (name, password) => {
   const form = document.querySelector('.login');
   let registeredUsers = fetchLocalStorage('registeredUsers');
   // Finds right user by name.
-  let foundUser = registeredUsers.find(user => user.name === name);
+  const foundUser = registeredUsers.find(user => user.name === name);
   // If correct login credentials.
   if (foundUser && foundUser.password === password) {
     // Sets user logged in status to true (spread operator).
