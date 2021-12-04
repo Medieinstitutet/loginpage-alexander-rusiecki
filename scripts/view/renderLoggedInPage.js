@@ -8,7 +8,7 @@ export const renderLoggedInPage = loggedInUser => {
   // If logged in user is found, creates DOM elements.
   if (isLoggedIn) {
     const avatar = document.createElement('img');
-    avatar.src = `./${imgUrl}`;
+    avatar.src = `/${imgUrl}`;
     avatar.className = 'avatar';
 
     const logOutButton = document.createElement('button');
