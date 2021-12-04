@@ -11,6 +11,9 @@ export const renderForm = (
   const logo = document.createElement('img');
   logo.src = './img/logo.jpg';
 
+  const registerHeading = document.createElement('h2');
+  registerHeading.textContent = 'Not a member yet?';
+
   const form = document.createElement('form');
   form.setAttribute('class', buttonText);
 
@@ -34,7 +37,7 @@ export const renderForm = (
     rootDiv.appendChild(header);
   } else {
     // Creates register new user form.
-    main.appendChild(form);
+    main.append(registerHeading, form);
     rootDiv.appendChild(main);
     rootDiv.insertAdjacentElement('beforeend', footer);
   }
