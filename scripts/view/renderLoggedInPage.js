@@ -9,7 +9,6 @@ export const renderLoggedInPage = loggedInUser => {
   if (isLoggedIn) {
     const avatar = document.createElement('img');
     avatar.src = imgUrl;
-    console.log(imgUrl);
     avatar.className = 'avatar';
 
     const logOutButton = document.createElement('button');
