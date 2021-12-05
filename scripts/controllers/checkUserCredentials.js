@@ -1,7 +1,7 @@
 import { fetchLocalStorage } from '../model/fetchLocalStorage.js';
 import { updateAndFetchLocalStorage } from '../model/updateAndFetchLocalStorage.js';
 import { renderLoggedInPage } from '../view/renderLoggedInPage.js';
-import { renderErrorMessage } from '../controllers/renderErrorMessage.js';
+import { renderErrorMessage } from '../view/renderErrorMessage.js';
 
 export const checkUserCredentials = (name, password) => {
   const form = document.querySelector('.login');
@@ -24,7 +24,7 @@ export const checkUserCredentials = (name, password) => {
     loggedInUser = registeredUsers.find(user => user.isLoggedIn);
     renderLoggedInPage(loggedInUser);
   } else {
-    renderErrorMessage('Please enter a valid name and password', '.login');
+    renderErrorMessage('Please enter a valid username and password', '.login');
     form.reset();
   }
 };
