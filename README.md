@@ -1,6 +1,4 @@
-# Assignment for Medieinstitutet.
-
-## Using Local storage as single source of truth, ES6 modules, SPA.
+# Using Local storage as single source of truth, ES6 modules, SPA.
 
 2 registered users by default:
 
